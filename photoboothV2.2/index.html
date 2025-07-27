@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhotoLian</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">PhotoLian</h1>
+    <p class="brand">PhotoBooth Ni Lian</p>
+
+    <div class="control-bar">
+      <select id="cameraSelect" onchange="switchCamera(this.value)">
+        <option>Loading cameras...</option>
+      </select>
+      <button onclick="takePhoto()">📸 Take Photo</button>
+      <button onclick="undoPhoto()">↩️ Undo Last</button>
+      <button onclick="toggleCamera()">🔄 Invert Camera</button>
+      <select id="downloadOptions" onchange="handleDownload(this.value)">
+        <option value="">📥 Download...</option>
+        <option value="photo1">Download Photo 1</option>
+        <option value="photo2">Download Photo 2</option>
+        <option value="photo3">Download Photo 3</option>
+        <option value="strip">📸 Download Strip</option>
+      </select>
+    </div>
+
+    <div class="video-wrapper">
+      <video id="video" autoplay playsinline></video>
+    </div>
+
+    <div id="preview" class="preview-row"></div>
+  </div>
+
+  <!-- Fullscreen countdown overlay -->
+  <div id="countdown">3</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
